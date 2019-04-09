@@ -2,13 +2,16 @@
 
 namespace FatCode\Tests\Http;
 
+use FatCode\Http\Exception\ServerException;
 use FatCode\Http\HttpServer;
+use FatCode\Http\Server\ErrorMiddleware;
 use FatCode\Http\Server\HttpServerHandler;
 use FatCode\Http\Server\HttpServerSettings;
 use FatCode\Http\Server\MiddlewarePipeline;
+use FatCode\Http\Server\NotFoundMiddleware;
 use PHPUnit\Framework\TestCase;
 
-class HttpServerTest extends TestCase
+final class HttpServerTest extends TestCase
 {
     public function testCanInstantiateWithoutArguments() : void
     {
@@ -16,18 +19,62 @@ class HttpServerTest extends TestCase
         self::assertInstanceOf(HttpServer::class, $server);
     }
 
-    public function testUse() : void
+    public function testComposeMiddlewarePipe() : void
     {
         $handlerMock = $this->getHandlerMock();
-        $middlewareMock = function() {};
+        $server = new HttpServer(new HttpServerSettings(), $handlerMock);
+        $server->start();
+        self::assertCount(2, $handlerMock->pipeline);
+        self::assertInstanceOf(ErrorMiddleware::class, $handlerMock->pipeline->dequeue());
+        self::assertInstanceOf(NotFoundMiddleware::class, $handlerMock->pipeline->dequeue());
+    }
+
+    public function testUseSuccess() : void
+    {
+        $handlerMock = $this->getHandlerMock();
+        $middlewareMock = function () {
+        };
         $server = new HttpServer(new HttpServerSettings(), $handlerMock);
         $server->use($middlewareMock);
         $server->start();
 
-        $pipeline = $handlerMock->pipeline;
-        self::assertCount(3, $pipeline);
+        self::assertCount(3, $handlerMock->pipeline);
     }
 
+    public function testUseFail() : void
+    {
+        $this->expectException(ServerException::class);
+        $server = new HttpServer();
+        $server->use(false);
+    }
+
+    public function testOnStart() : void
+    {
+        $onStartExecuted = false;
+        $onStart = function () use (&$onStartExecuted) {
+            $onStartExecuted = true;
+        };
+        $server = new HttpServer(null, $this->getHandlerMock());
+        $server->onStart($onStart);
+
+        self::assertFalse($onStartExecuted);
+        $server->start();
+        self::assertTrue($onStartExecuted);
+    }
+
+    public function testOnStop() : void
+    {
+        $onStopExecuted = false;
+        $onStop = function () use (&$onStopExecuted) {
+            $onStopExecuted = true;
+        };
+        $server = new HttpServer(null, $this->getHandlerMock());
+        $server->onStop($onStop);
+
+        self::assertFalse($onStopExecuted);
+        $server->start();
+        self::assertTrue($onStopExecuted);
+    }
 
     private function getHandlerMock() : HttpServerHandler
     {

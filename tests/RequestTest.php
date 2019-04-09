@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 use InvalidArgumentException;
 use Zend\Diactoros\Uri;
 
-class RequestTest extends TestCase
+final class RequestTest extends TestCase
 {
     /**
      * @dataProvider provideValidURIs

@@ -13,9 +13,9 @@ class MiddlewarePipeline implements MiddlewareInterface, RequestHandlerInterface
 {
     protected $pipeline;
 
-    public function __construct(SplQueue $pipeline = null)
+    public function __construct(SplQueue $pipeline)
     {
-        $this->pipeline = $pipeline ?: new SplQueue();
+        $this->pipeline = $pipeline;
     }
 
     public function __clone()
@@ -37,9 +37,14 @@ class MiddlewarePipeline implements MiddlewareInterface, RequestHandlerInterface
     public function handle(ServerRequestInterface $request) : ResponseInterface
     {
         $pipeline = clone $this;
-        $middleware = $pipeline->pipeline->dequeue();
+        $middleware = $pipeline->dequeue();
 
         return $middleware->process($request, $pipeline);
+    }
+
+    public function dequeue() : MiddlewareInterface
+    {
+        return $this->pipeline->dequeue();
     }
 
     /**

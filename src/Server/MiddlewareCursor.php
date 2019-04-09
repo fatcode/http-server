@@ -37,13 +37,20 @@ final class MiddlewareCursor implements RequestHandlerInterface
     public function handle(ServerRequestInterface $request) : ResponseInterface
     {
         // Bubble up
-        if ($this->queue->isEmpty()) {
+        if ($this->hasFinished()) {
             return $this->parent->handle($request);
         }
 
-        /** @var MiddlewareInterface $middleware */
-        $middleware = $this->queue->dequeue();
+        return $this->dequeue()->process($request, $this);
+    }
 
-        return $middleware->process($request, $this);
+    public function hasFinished() : bool
+    {
+        return $this->queue->isEmpty();
+    }
+
+    public function dequeue() : MiddlewareInterface
+    {
+        return $this->queue->dequeue();
     }
 }

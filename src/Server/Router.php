@@ -7,20 +7,18 @@ use FastRoute\Dispatcher;
 use FastRoute\Dispatcher\GroupCountBased as GroupCountBasedDispatcher;
 use FastRoute\RouteParser\Std as StandardRouteParser;
 use FastRoute\RouteCollector;
+use FatCode\Http\Exception\ServerException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Psr\SimpleCache\CacheInterface;
 
 class Router implements MiddlewareInterface
 {
     private $routes;
-    private $cache;
 
-    public function __construct(CacheInterface $cache = null)
+    public function __construct()
     {
-        $this->cache = $cache;
         $this->routes = new RouteCollector(new StandardRouteParser(), new GroupCountBasedDataGenerator());
     }
 
@@ -37,11 +35,21 @@ class Router implements MiddlewareInterface
                 }
                 $response = $handler($request);
                 break;
-            case Dispatcher::NOT_FOUND:
             case Dispatcher::METHOD_NOT_ALLOWED:
+                $response = $handler->handle($request);
+                break;
+            case Dispatcher::NOT_FOUND:
             default:
                 return $handler->handle($request);
 
+        }
+
+        if (!$response instanceof ResponseInterface) {
+            throw new ServerException(sprintf(
+                'Route handler must return instance of `%s`, `%s` returned instead.',
+                ResponseInterface::class,
+                is_object($response) ? get_class($response) : gettype($response)
+            ));
         }
 
         return $response;

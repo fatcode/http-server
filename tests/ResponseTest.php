@@ -7,14 +7,13 @@ use FatCode\Http\HttpStatusCode;
 use FatCode\Http\Response;
 use PHPUnit\Framework\TestCase;
 
-class ResponseTest extends TestCase
+final class ResponseTest extends TestCase
 {
     public function testCanInstantiate() : void
     {
-       $response = new Response('Test body', HttpStatusCode::CREATED());
-
-       self::assertSame(HttpStatusCode::CREATED, $response->getStatusCode());
-       self::assertSame('Test body', (string) $response->getBody());
+        $response = new Response('Test body', HttpStatusCode::CREATED());
+        self::assertSame(HttpStatusCode::CREATED, $response->getStatusCode());
+        self::assertSame('Test body', (string) $response->getBody());
     }
 
     public function testWrite() : void

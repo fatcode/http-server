@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1554793259">
-  <project timestamp="1554793259">
+<coverage generated="1554811147">
+  <project timestamp="1554811147">
     <package name="FatCode\Http">
       <file name="/Users/dawidkraczkowski/Projects/http-server/src/HttpMethod.php">
         <class name="FatCode\Http\HttpMethod" namespace="FatCode\Http">
@@ -10,20 +10,20 @@
       </file>
       <file name="/Users/dawidkraczkowski/Projects/http-server/src/HttpServer.php">
         <class name="FatCode\Http\HttpServer" namespace="FatCode\Http">
-          <metrics complexity="12" methods="7" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="21" elements="37" coveredelements="23"/>
+          <metrics complexity="12" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="0" elements="37" coveredelements="0"/>
         </class>
-        <line num="25" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="27" type="stmt" count="1"/>
-        <line num="28" type="stmt" count="1"/>
-        <line num="29" type="stmt" count="1"/>
-        <line num="30" type="stmt" count="1"/>
-        <line num="40" type="method" name="use" visibility="public" complexity="3" crap="3.04" count="1"/>
-        <line num="42" type="stmt" count="1"/>
-        <line num="43" type="stmt" count="1"/>
+        <line num="25" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="28" type="stmt" count="0"/>
+        <line num="29" type="stmt" count="0"/>
+        <line num="30" type="stmt" count="0"/>
+        <line num="40" type="method" name="use" visibility="public" complexity="3" crap="12.00" count="0"/>
+        <line num="42" type="stmt" count="0"/>
+        <line num="43" type="stmt" count="0"/>
         <line num="44" type="stmt" count="0"/>
-        <line num="46" type="stmt" count="1"/>
-        <line num="49" type="stmt" count="1"/>
-        <line num="50" type="stmt" count="1"/>
+        <line num="46" type="stmt" count="0"/>
+        <line num="49" type="stmt" count="0"/>
+        <line num="50" type="stmt" count="0"/>
         <line num="52" type="method" name="onError" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="54" type="stmt" count="0"/>
         <line num="55" type="stmt" count="0"/>
@@ -33,64 +33,64 @@
         <line num="62" type="method" name="onStop" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="64" type="stmt" count="0"/>
         <line num="65" type="stmt" count="0"/>
-        <line num="67" type="method" name="start" visibility="public" complexity="3" crap="3.14" count="1"/>
-        <line num="69" type="stmt" count="1"/>
+        <line num="67" type="method" name="start" visibility="public" complexity="3" crap="12.00" count="0"/>
+        <line num="69" type="stmt" count="0"/>
         <line num="70" type="stmt" count="0"/>
-        <line num="73" type="stmt" count="1"/>
-        <line num="74" type="stmt" count="1"/>
-        <line num="75" type="stmt" count="1"/>
-        <line num="78" type="stmt" count="1"/>
+        <line num="73" type="stmt" count="0"/>
+        <line num="74" type="stmt" count="0"/>
+        <line num="75" type="stmt" count="0"/>
+        <line num="78" type="stmt" count="0"/>
         <line num="79" type="stmt" count="0"/>
-        <line num="81" type="stmt" count="1"/>
-        <line num="83" type="method" name="buildMiddlewarePipeline" visibility="private" complexity="2" crap="2" count="1"/>
-        <line num="85" type="stmt" count="1"/>
-        <line num="86" type="stmt" count="1"/>
-        <line num="87" type="stmt" count="1"/>
-        <line num="88" type="stmt" count="1"/>
-        <line num="90" type="stmt" count="1"/>
-        <line num="91" type="stmt" count="1"/>
-        <metrics loc="93" ncloc="85" classes="1" methods="7" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="21" elements="37" coveredelements="23"/>
+        <line num="81" type="stmt" count="0"/>
+        <line num="83" type="method" name="buildMiddlewarePipeline" visibility="private" complexity="2" crap="6.00" count="0"/>
+        <line num="85" type="stmt" count="0"/>
+        <line num="86" type="stmt" count="0"/>
+        <line num="87" type="stmt" count="0"/>
+        <line num="88" type="stmt" count="0"/>
+        <line num="90" type="stmt" count="0"/>
+        <line num="91" type="stmt" count="0"/>
+        <metrics loc="93" ncloc="85" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="0" elements="37" coveredelements="0"/>
       </file>
       <file name="/Users/dawidkraczkowski/Projects/http-server/src/HttpStatusCode.php">
         <class name="FatCode\Http\HttpStatusCode" namespace="FatCode\Http">
-          <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+          <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
         </class>
-        <line num="209" type="method" name="getPhrase" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="211" type="stmt" count="1"/>
-        <metrics loc="213" ncloc="143" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+        <line num="209" type="method" name="getPhrase" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="211" type="stmt" count="0"/>
+        <metrics loc="213" ncloc="143" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
       </file>
       <file name="/Users/dawidkraczkowski/Projects/http-server/src/Request.php">
         <class name="FatCode\Http\Request" namespace="FatCode\Http">
-          <metrics complexity="8" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="15" coveredelements="0"/>
+          <metrics complexity="8" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="10" elements="15" coveredelements="10"/>
         </class>
-        <line num="15" type="method" name="__construct" visibility="public" complexity="4" crap="20.00" count="0"/>
-        <line num="21" type="stmt" count="0"/>
-        <line num="22" type="stmt" count="0"/>
-        <line num="23" type="stmt" count="0"/>
-        <line num="24" type="stmt" count="0"/>
-        <line num="25" type="stmt" count="0"/>
-        <line num="27" type="stmt" count="0"/>
-        <line num="29" type="stmt" count="0"/>
-        <line num="31" type="stmt" count="0"/>
-        <line num="32" type="stmt" count="0"/>
-        <line num="34" type="method" name="validateUri" visibility="private" complexity="4" crap="20.00" count="0"/>
-        <line num="36" type="stmt" count="0"/>
-        <line num="37" type="stmt" count="0"/>
-        <line num="38" type="stmt" count="0"/>
-        <line num="41" type="stmt" count="0"/>
-        <metrics loc="42" ncloc="42" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="15" coveredelements="0"/>
-      </file>
-      <file name="/Users/dawidkraczkowski/Projects/http-server/src/Response.php">
-        <class name="FatCode\Http\Response" namespace="FatCode\Http">
-          <metrics complexity="8" methods="7" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="6" elements="26" coveredelements="7"/>
-        </class>
-        <line num="17" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="19" type="stmt" count="1"/>
-        <line num="20" type="stmt" count="1"/>
+        <line num="15" type="method" name="__construct" visibility="public" complexity="4" crap="4.02" count="1"/>
         <line num="21" type="stmt" count="1"/>
         <line num="22" type="stmt" count="1"/>
         <line num="23" type="stmt" count="1"/>
         <line num="24" type="stmt" count="1"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="27" type="stmt" count="1"/>
+        <line num="29" type="stmt" count="1"/>
+        <line num="31" type="stmt" count="1"/>
+        <line num="32" type="stmt" count="1"/>
+        <line num="34" type="method" name="validateUri" visibility="private" complexity="4" crap="6.00" count="1"/>
+        <line num="36" type="stmt" count="1"/>
+        <line num="37" type="stmt" count="0"/>
+        <line num="38" type="stmt" count="0"/>
+        <line num="41" type="stmt" count="1"/>
+        <metrics loc="42" ncloc="42" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="10" elements="15" coveredelements="10"/>
+      </file>
+      <file name="/Users/dawidkraczkowski/Projects/http-server/src/Response.php">
+        <class name="FatCode\Http\Response" namespace="FatCode\Http">
+          <metrics complexity="8" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="0" elements="26" coveredelements="0"/>
+        </class>
+        <line num="17" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <line num="20" type="stmt" count="0"/>
+        <line num="21" type="stmt" count="0"/>
+        <line num="22" type="stmt" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="24" type="stmt" count="0"/>
         <line num="26" type="method" name="write" visibility="public" complexity="2" crap="6.00" count="0"/>
         <line num="28" type="stmt" count="0"/>
         <line num="29" type="stmt" count="0"/>
@@ -110,37 +110,37 @@
         <line num="58" type="stmt" count="0"/>
         <line num="59" type="stmt" count="0"/>
         <line num="60" type="stmt" count="0"/>
-        <metrics loc="62" ncloc="62" classes="1" methods="7" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="6" elements="26" coveredelements="7"/>
+        <metrics loc="62" ncloc="62" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="0" elements="26" coveredelements="0"/>
       </file>
       <file name="/Users/dawidkraczkowski/Projects/http-server/src/ServerRequest.php">
         <class name="FatCode\Http\ServerRequest" namespace="FatCode\Http">
-          <metrics complexity="26" methods="17" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="63" coveredstatements="0" elements="80" coveredelements="0"/>
+          <metrics complexity="26" methods="17" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="63" coveredstatements="17" elements="80" coveredelements="18"/>
         </class>
-        <line num="42" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="50" type="stmt" count="0"/>
-        <line num="51" type="stmt" count="0"/>
-        <line num="52" type="stmt" count="0"/>
-        <line num="53" type="stmt" count="0"/>
-        <line num="54" type="stmt" count="0"/>
-        <line num="55" type="stmt" count="0"/>
-        <line num="56" type="stmt" count="0"/>
-        <line num="58" type="method" name="parseBody" visibility="private" complexity="5" crap="30.00" count="0"/>
-        <line num="60" type="stmt" count="0"/>
-        <line num="62" type="stmt" count="0"/>
-        <line num="64" type="stmt" count="0"/>
-        <line num="65" type="stmt" count="0"/>
+        <line num="42" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="50" type="stmt" count="1"/>
+        <line num="51" type="stmt" count="1"/>
+        <line num="52" type="stmt" count="1"/>
+        <line num="53" type="stmt" count="1"/>
+        <line num="54" type="stmt" count="1"/>
+        <line num="55" type="stmt" count="1"/>
+        <line num="56" type="stmt" count="1"/>
+        <line num="58" type="method" name="parseBody" visibility="private" complexity="5" crap="8.12" count="1"/>
+        <line num="60" type="stmt" count="1"/>
+        <line num="62" type="stmt" count="1"/>
+        <line num="64" type="stmt" count="1"/>
+        <line num="65" type="stmt" count="1"/>
         <line num="66" type="stmt" count="0"/>
         <line num="67" type="stmt" count="0"/>
-        <line num="68" type="stmt" count="0"/>
+        <line num="68" type="stmt" count="1"/>
         <line num="69" type="stmt" count="0"/>
         <line num="70" type="stmt" count="0"/>
-        <line num="71" type="stmt" count="0"/>
+        <line num="71" type="stmt" count="1"/>
         <line num="72" type="stmt" count="0"/>
         <line num="73" type="stmt" count="0"/>
-        <line num="74" type="stmt" count="0"/>
+        <line num="74" type="stmt" count="1"/>
         <line num="75" type="stmt" count="0"/>
         <line num="76" type="stmt" count="0"/>
-        <line num="78" type="stmt" count="0"/>
+        <line num="78" type="stmt" count="1"/>
         <line num="83" type="method" name="getServerParams" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="85" type="stmt" count="0"/>
         <line num="91" type="method" name="getUploadedFiles" visibility="public" complexity="1" crap="2.00" count="0"/>
@@ -188,15 +188,15 @@
         <line num="218" type="stmt" count="0"/>
         <line num="219" type="stmt" count="0"/>
         <line num="220" type="stmt" count="0"/>
-        <line num="229" type="method" name="validateUploadedFiles" visibility="private" complexity="4" crap="20.00" count="0"/>
-        <line num="231" type="stmt" count="0"/>
+        <line num="229" type="method" name="validateUploadedFiles" visibility="private" complexity="4" crap="9.83" count="1"/>
+        <line num="231" type="stmt" count="1"/>
         <line num="232" type="stmt" count="0"/>
         <line num="233" type="stmt" count="0"/>
         <line num="234" type="stmt" count="0"/>
         <line num="237" type="stmt" count="0"/>
         <line num="238" type="stmt" count="0"/>
-        <line num="241" type="stmt" count="0"/>
-        <metrics loc="242" ncloc="171" classes="1" methods="17" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="63" coveredstatements="0" elements="80" coveredelements="0"/>
+        <line num="241" type="stmt" count="1"/>
+        <metrics loc="242" ncloc="171" classes="1" methods="17" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="63" coveredstatements="17" elements="80" coveredelements="18"/>
       </file>
       <file name="/Users/dawidkraczkowski/Projects/http-server/src/Stream.php">
         <class name="FatCode\Http\Stream" namespace="FatCode\Http">
@@ -226,17 +226,17 @@
     <package name="FatCode\Http\Server">
       <file name="/Users/dawidkraczkowski/Projects/http-server/src/Server/CallableMiddleware.php">
         <class name="FatCode\Http\Server\CallableMiddleware" namespace="FatCode\Http\Server">
-          <metrics complexity="3" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="2" elements="8" coveredelements="3"/>
+          <metrics complexity="3" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="8" coveredelements="0"/>
         </class>
-        <line num="15" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="17" type="stmt" count="1"/>
-        <line num="18" type="stmt" count="1"/>
+        <line num="15" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="17" type="stmt" count="0"/>
+        <line num="18" type="stmt" count="0"/>
         <line num="20" type="method" name="process" visibility="public" complexity="2" crap="6.00" count="0"/>
         <line num="22" type="stmt" count="0"/>
         <line num="23" type="stmt" count="0"/>
         <line num="24" type="stmt" count="0"/>
         <line num="27" type="stmt" count="0"/>
-        <metrics loc="29" ncloc="29" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="2" elements="8" coveredelements="3"/>
+        <metrics loc="29" ncloc="29" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="8" coveredelements="0"/>
       </file>
       <file name="/Users/dawidkraczkowski/Projects/http-server/src/Server/DispatchMode.php">
         <class name="FatCode\Http\Server\DispatchMode" namespace="FatCode\Http\Server">
@@ -246,11 +246,11 @@
       </file>
       <file name="/Users/dawidkraczkowski/Projects/http-server/src/Server/ErrorMiddleware.php">
         <class name="FatCode\Http\Server\ErrorMiddleware" namespace="FatCode\Http\Server">
-          <metrics complexity="9" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="2" elements="25" coveredelements="3"/>
+          <metrics complexity="9" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="0" elements="25" coveredelements="0"/>
         </class>
-        <line num="24" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="26" type="stmt" count="1"/>
-        <line num="27" type="stmt" count="1"/>
+        <line num="24" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <line num="27" type="stmt" count="0"/>
         <line num="29" type="method" name="process" visibility="public" complexity="5" crap="30.00" count="0"/>
         <line num="31" type="stmt" count="0"/>
         <line num="34" type="stmt" count="0"/>
@@ -273,19 +273,19 @@
         <line num="67" type="method" name="restoreErrorHandler" visibility="private" complexity="1" crap="2.00" count="0"/>
         <line num="69" type="stmt" count="0"/>
         <line num="70" type="stmt" count="0"/>
-        <metrics loc="71" ncloc="66" classes="1" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="2" elements="25" coveredelements="3"/>
+        <metrics loc="71" ncloc="66" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="0" elements="25" coveredelements="0"/>
       </file>
       <file name="/Users/dawidkraczkowski/Projects/http-server/src/Server/HttpServerSettings.php">
         <class name="FatCode\Http\Server\HttpServerSettings" namespace="FatCode\Http\Server">
-          <metrics complexity="31" methods="21" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="55" coveredstatements="6" elements="76" coveredelements="7"/>
+          <metrics complexity="31" methods="21" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="55" coveredstatements="0" elements="76" coveredelements="0"/>
         </class>
-        <line num="21" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="23" type="stmt" count="1"/>
-        <line num="24" type="stmt" count="1"/>
-        <line num="25" type="stmt" count="1"/>
-        <line num="26" type="stmt" count="1"/>
-        <line num="27" type="stmt" count="1"/>
-        <line num="28" type="stmt" count="1"/>
+        <line num="21" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="24" type="stmt" count="0"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="28" type="stmt" count="0"/>
         <line num="35" type="method" name="setPort" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="37" type="stmt" count="0"/>
         <line num="38" type="stmt" count="0"/>
@@ -355,11 +355,11 @@
         <line num="224" type="stmt" count="0"/>
         <line num="225" type="stmt" count="0"/>
         <line num="228" type="stmt" count="0"/>
-        <metrics loc="230" ncloc="170" classes="1" methods="21" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="55" coveredstatements="6" elements="76" coveredelements="7"/>
+        <metrics loc="230" ncloc="170" classes="1" methods="21" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="55" coveredstatements="0" elements="76" coveredelements="0"/>
       </file>
       <file name="/Users/dawidkraczkowski/Projects/http-server/src/Server/MiddlewareCursor.php">
         <class name="FatCode\Http\Server\MiddlewareCursor" namespace="FatCode\Http\Server">
-          <metrics complexity="4" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="11" coveredelements="0"/>
+          <metrics complexity="6" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="14" coveredelements="0"/>
         </class>
         <line num="26" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="28" type="stmt" count="0"/>
@@ -370,17 +370,20 @@
         <line num="37" type="method" name="handle" visibility="public" complexity="2" crap="6.00" count="0"/>
         <line num="40" type="stmt" count="0"/>
         <line num="41" type="stmt" count="0"/>
-        <line num="45" type="stmt" count="0"/>
-        <line num="47" type="stmt" count="0"/>
-        <metrics loc="49" ncloc="37" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="11" coveredelements="0"/>
+        <line num="44" type="stmt" count="0"/>
+        <line num="47" type="method" name="hasFinished" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="49" type="stmt" count="0"/>
+        <line num="52" type="method" name="dequeue" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="54" type="stmt" count="0"/>
+        <metrics loc="56" ncloc="45" classes="1" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="14" coveredelements="0"/>
       </file>
       <file name="/Users/dawidkraczkowski/Projects/http-server/src/Server/MiddlewarePipeline.php">
         <class name="FatCode\Http\Server\MiddlewarePipeline" namespace="FatCode\Http\Server">
-          <metrics complexity="7" methods="6" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="3" elements="17" coveredelements="5"/>
+          <metrics complexity="7" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="19" coveredelements="0"/>
         </class>
-        <line num="16" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="1"/>
-        <line num="18" type="stmt" count="1"/>
-        <line num="19" type="stmt" count="1"/>
+        <line num="16" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <line num="19" type="stmt" count="0"/>
         <line num="21" type="method" name="__clone" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="23" type="stmt" count="0"/>
         <line num="24" type="stmt" count="0"/>
@@ -390,68 +393,74 @@
         <line num="39" type="stmt" count="0"/>
         <line num="40" type="stmt" count="0"/>
         <line num="42" type="stmt" count="0"/>
-        <line num="52" type="method" name="process" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="54" type="stmt" count="0"/>
-        <line num="55" type="stmt" count="0"/>
-        <line num="58" type="method" name="count" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="60" type="stmt" count="1"/>
-        <metrics loc="62" ncloc="49" classes="1" methods="6" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="3" elements="17" coveredelements="5"/>
+        <line num="45" type="method" name="dequeue" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="47" type="stmt" count="0"/>
+        <line num="57" type="method" name="process" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="59" type="stmt" count="0"/>
+        <line num="60" type="stmt" count="0"/>
+        <line num="63" type="method" name="count" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="65" type="stmt" count="0"/>
+        <metrics loc="67" ncloc="54" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="19" coveredelements="0"/>
       </file>
       <file name="/Users/dawidkraczkowski/Projects/http-server/src/Server/NotFoundMiddleware.php">
         <class name="FatCode\Http\Server\NotFoundMiddleware" namespace="FatCode\Http\Server">
-          <metrics complexity="2" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="2" elements="5" coveredelements="3"/>
+          <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="5" coveredelements="0"/>
         </class>
-        <line num="16" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="18" type="stmt" count="1"/>
-        <line num="19" type="stmt" count="1"/>
+        <line num="16" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <line num="19" type="stmt" count="0"/>
         <line num="21" type="method" name="process" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="23" type="stmt" count="0"/>
-        <metrics loc="25" ncloc="25" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="2" elements="5" coveredelements="3"/>
+        <metrics loc="25" ncloc="25" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="5" coveredelements="0"/>
       </file>
       <file name="/Users/dawidkraczkowski/Projects/http-server/src/Server/Router.php">
         <class name="FatCode\Http\Server\Router" namespace="FatCode\Http\Server">
-          <metrics complexity="13" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="0" elements="39" coveredelements="0"/>
+          <metrics complexity="15" methods="9" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="34" coveredstatements="14" elements="43" coveredelements="16"/>
         </class>
-        <line num="21" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="23" type="stmt" count="0"/>
-        <line num="24" type="stmt" count="0"/>
-        <line num="25" type="stmt" count="0"/>
-        <line num="27" type="method" name="process" visibility="public" complexity="5" crap="30.00" count="0"/>
-        <line num="29" type="stmt" count="0"/>
-        <line num="30" type="stmt" count="0"/>
-        <line num="32" type="stmt" count="0"/>
-        <line num="33" type="stmt" count="0"/>
+        <line num="20" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="22" type="stmt" count="2"/>
+        <line num="23" type="stmt" count="2"/>
+        <line num="25" type="method" name="process" visibility="public" complexity="7" crap="11.30" count="1"/>
+        <line num="27" type="stmt" count="1"/>
+        <line num="28" type="stmt" count="1"/>
+        <line num="30" type="stmt" count="1"/>
+        <line num="31" type="stmt" count="1"/>
+        <line num="32" type="stmt" count="1"/>
+        <line num="33" type="stmt" count="1"/>
         <line num="34" type="stmt" count="0"/>
-        <line num="35" type="stmt" count="0"/>
-        <line num="36" type="stmt" count="0"/>
+        <line num="36" type="stmt" count="1"/>
+        <line num="37" type="stmt" count="1"/>
         <line num="38" type="stmt" count="0"/>
         <line num="39" type="stmt" count="0"/>
-        <line num="40" type="stmt" count="0"/>
         <line num="41" type="stmt" count="0"/>
-        <line num="43" type="stmt" count="0"/>
+        <line num="45" type="stmt" count="1"/>
+        <line num="46" type="stmt" count="0"/>
         <line num="47" type="stmt" count="0"/>
-        <line num="50" type="method" name="put" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="52" type="stmt" count="0"/>
-        <line num="53" type="stmt" count="0"/>
-        <line num="55" type="method" name="delete" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="57" type="stmt" count="0"/>
+        <line num="48" type="stmt" count="0"/>
+        <line num="49" type="stmt" count="0"/>
+        <line num="53" type="stmt" count="1"/>
+        <line num="56" type="method" name="put" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="58" type="stmt" count="0"/>
-        <line num="60" type="method" name="patch" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="62" type="stmt" count="0"/>
+        <line num="59" type="stmt" count="0"/>
+        <line num="61" type="method" name="delete" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="63" type="stmt" count="0"/>
-        <line num="65" type="method" name="options" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="67" type="stmt" count="0"/>
+        <line num="64" type="stmt" count="0"/>
+        <line num="66" type="method" name="patch" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="68" type="stmt" count="0"/>
-        <line num="70" type="method" name="head" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="72" type="stmt" count="0"/>
+        <line num="69" type="stmt" count="0"/>
+        <line num="71" type="method" name="options" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="73" type="stmt" count="0"/>
-        <line num="75" type="method" name="get" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="77" type="stmt" count="0"/>
+        <line num="74" type="stmt" count="0"/>
+        <line num="76" type="method" name="head" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="78" type="stmt" count="0"/>
-        <line num="80" type="method" name="post" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="82" type="stmt" count="0"/>
-        <line num="83" type="stmt" count="0"/>
-        <metrics loc="84" ncloc="84" classes="1" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="0" elements="39" coveredelements="0"/>
+        <line num="79" type="stmt" count="0"/>
+        <line num="81" type="method" name="get" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="83" type="stmt" count="1"/>
+        <line num="84" type="stmt" count="1"/>
+        <line num="86" type="method" name="post" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="88" type="stmt" count="0"/>
+        <line num="89" type="stmt" count="0"/>
+        <metrics loc="90" ncloc="90" classes="1" methods="9" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="34" coveredstatements="14" elements="43" coveredelements="16"/>
       </file>
     </package>
     <file name="/Users/dawidkraczkowski/Projects/http-server/src/Server/HttpServerHandler.php">
@@ -533,6 +542,6 @@
     <file name="/Users/dawidkraczkowski/Projects/http-server/src/ServerRequestFactory.php">
       <metrics loc="10" ncloc="10" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="19" loc="1496" ncloc="1203" classes="15" methods="88" coveredmethods="11" conditionals="0" coveredconditionals="0" statements="330" coveredstatements="50" elements="418" coveredelements="61"/>
+    <metrics files="19" loc="1514" ncloc="1222" classes="15" methods="91" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="336" coveredstatements="48" elements="427" coveredelements="52"/>
   </project>
 </coverage>
