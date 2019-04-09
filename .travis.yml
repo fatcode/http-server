@@ -1,0 +1,30 @@
+language: php
+
+env:
+  global:
+    - CC_TEST_REPORTER_ID=f4e155d66ed4faf2b999d7d080dfb69bcf6d8c6b3da2378a1100230466d8d4a6
+
+sudo: true
+
+php:
+  - 7.2
+  - 7.3
+
+before_install:
+  - composer self-update
+  - pecl install -f swoole
+  - composer install --no-interaction --no-progress --no-suggest
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
+script:
+  - vendor/bin/phpunit --coverage-clover=clover.xml
+  - vendor/bin/phpcs --standard=PSR12 --warning-severity=0 src
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+
+cache:
+  directories:
+    - $HOME/.composer/cache
