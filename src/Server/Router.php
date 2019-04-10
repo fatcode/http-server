@@ -41,7 +41,6 @@ class Router implements MiddlewareInterface
             case Dispatcher::NOT_FOUND:
             default:
                 return $handler->handle($request);
-
         }
 
         if (!$response instanceof ResponseInterface) {
