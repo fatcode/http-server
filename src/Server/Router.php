@@ -36,8 +36,6 @@ class Router implements MiddlewareInterface
                 $response = $handler($request);
                 break;
             case Dispatcher::METHOD_NOT_ALLOWED:
-                $response = $handler->handle($request);
-                break;
             case Dispatcher::NOT_FOUND:
             default:
                 return $handler->handle($request);
