@@ -194,35 +194,35 @@ class HttpServerSettings
         ];
 
         if (isset($this->workers)) {
-            $output['workers'] = $this->workers;
+            $output['workers'] = $this->getWorkers();
         }
 
         if (isset($this->maxRequests)) {
-            $output['max_requests'] = $this->maxRequests;
+            $output['max_requests'] = $this->getMaxRequests();
         }
 
         if (isset($this->maxConnections)) {
-            $output['max_connections'] = $this->maxConnections;
+            $output['max_connections'] = $this->getMaxConnections();
         }
 
         if (isset($this->uploadDir)) {
-            $output['output_dir'] = $this->uploadDir;
+            $output['output_dir'] = $this->getUploadDir();
         }
 
         if (isset($this->bufferOutputSize)) {
-            $output['buffer_output_size'] = $this->bufferOutputSize;
+            $output['buffer_output_size'] = $this->getBufferOutputSize();
         }
 
         if (isset($this->compressionLevel)) {
-            $output['response_compression_level'] = $this->compressionLevel;
+            $output['response_compression_level'] = $this->getCompressionLevel();
         }
 
         if (isset($this->dispatchMode)) {
-            $output['dispatch_mode'] = $this->dispatchMode->getValue();
+            $output['dispatch_mode'] = $this->getDispatchMode()->getValue();
         }
 
         if (isset($this->pidFile)) {
-            $output['pid_file'] = $this->pidFile;
+            $output['pid_file'] = $this->getPidFile();
         }
 
         return $output;
