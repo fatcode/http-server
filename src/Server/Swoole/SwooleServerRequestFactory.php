@@ -13,6 +13,7 @@ use Throwable;
 use function Zend\Diactoros\marshalMethodFromSapi;
 use function Zend\Diactoros\marshalUriFromSapi;
 use function Zend\Diactoros\normalizeUploadedFiles;
+use function strtoupper;
 
 use const CASE_UPPER;
 
@@ -36,7 +37,7 @@ class SwooleServerRequestFactory implements ServerRequestFactory
 
         // Http method
         try {
-            $httpMethod = HttpMethod::fromValue(marshalMethodFromSapi($serverParams));
+            $httpMethod = HttpMethod::fromValue(strtoupper(marshalMethodFromSapi($serverParams)));
         } catch (EnumException $exception) {
             $httpMethod = HttpMethod::GET();
         }

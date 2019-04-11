@@ -189,8 +189,8 @@ class HttpServerSettings
     public function toArray() : array
     {
         $output = [
-            'address' => $this->address,
-            'port' => $this->port,
+            'address' => $this->getAddress(),
+            'port' => $this->getPort(),
         ];
 
         if (isset($this->workers)) {

@@ -26,6 +26,7 @@ final class SwooleServerHandlerTest extends TestCase
     public function testOnRequest() : void
     {
         $psrResponse = new Response('test123');
+        $psrResponse = $psrResponse->withHeader('test-header', 'test');
         $psrServerRequest = new ServerRequest();
         $psrServerRequest = $psrServerRequest->withHeader('Accept-Encoding', 'deflate, gzip;q=1.0, *;q=0.5');
 
