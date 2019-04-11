@@ -22,7 +22,6 @@ class HttpServerSettings
     {
         $this->address = $address;
         $this->port = $port;
-        $this->pidFile = sys_get_temp_dir() . '/open-api-server.pid';
         $this->compressionLevel = 0;
         $this->dispatchMode = DispatchMode::POLLING();
     }
