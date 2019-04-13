@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Http;
+namespace FatCode\HttpServer;
 
-use FatCode\Http\Exception\ResponseException;
+use FatCode\HttpServer\Exception\ResponseHttpServerException;
 use Psr\Http\Message\ResponseInterface;
 use Zend\Diactoros\MessageTrait;
 
@@ -26,7 +26,7 @@ class Response implements ResponseInterface
     public function write(string $body) : void
     {
         if ($this->complete) {
-            throw ResponseException::forWritingToCompleteResponse();
+            throw ResponseHttpServerException::forWritingToCompleteResponse();
         }
 
         $this->getBody()->write($body);

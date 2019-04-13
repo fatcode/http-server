@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Tests\Http;
+namespace FatCode\Tests\HttpServer;
 
-use FatCode\Http\Request;
+use FatCode\HttpServer\Request;
 use PHPUnit\Framework\TestCase;
 use InvalidArgumentException;
 use Zend\Diactoros\Uri;

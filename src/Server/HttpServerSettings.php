@@ -1,9 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Http\Server;
+namespace FatCode\HttpServer\Server;
 
-use FatCode\Http\Exception\ServerException;
-use function sys_get_temp_dir;
+use FatCode\HttpServer\Exception\SettingsException;
 
 class HttpServerSettings
 {
@@ -17,6 +16,7 @@ class HttpServerSettings
     private $compressionLevel;
     private $dispatchMode;
     private $pidFile;
+    private $debug;
 
     public function __construct(string $address = '0.0.0.0', int $port = 80)
     {
@@ -24,6 +24,7 @@ class HttpServerSettings
         $this->port = $port;
         $this->compressionLevel = 0;
         $this->dispatchMode = DispatchMode::POLLING();
+        $this->bufferOutputSize = 2 * 1024 * 1024;
     }
 
     /**
@@ -117,7 +118,7 @@ class HttpServerSettings
     public function setPidFile(string $pidFile): void
     {
         if (!is_writable($pidFile) && !is_writable(dirname($pidFile))) {
-            throw ServerException::forInvalidPidFile($pidFile);
+            throw SettingsException::forInvalidPidFile($pidFile);
         }
 
         $this->pidFile = $pidFile;
@@ -185,11 +186,17 @@ class HttpServerSettings
         return $this->pidFile;
     }
 
+    public function enableDebug() : void
+    {
+        $this->debug = true;
+    }
+
     public function toArray() : array
     {
         $output = [
             'address' => $this->getAddress(),
             'port' => $this->getPort(),
+            'buffer_output_size' => $this->getBufferOutputSize(),
         ];
 
         if (isset($this->workers)) {
@@ -205,11 +212,7 @@ class HttpServerSettings
         }
 
         if (isset($this->uploadDir)) {
-            $output['output_dir'] = $this->getUploadDir();
-        }
-
-        if (isset($this->bufferOutputSize)) {
-            $output['buffer_output_size'] = $this->getBufferOutputSize();
+            $output['upload_dir'] = $this->getUploadDir();
         }
 
         if (isset($this->compressionLevel)) {
@@ -222,6 +225,10 @@ class HttpServerSettings
 
         if (isset($this->pidFile)) {
             $output['pid_file'] = $this->getPidFile();
+        }
+
+        if ($this->debug) {
+            $output['debug'] = $this->debug;
         }
 
         return $output;

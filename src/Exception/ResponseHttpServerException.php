@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Http\Exception;
+namespace FatCode\HttpServer\Exception;
 
 use RuntimeException;
 
-class ResponseException extends RuntimeException implements Exception
+class ResponseHttpServerException extends RuntimeException implements HttpServerException
 {
     public static function forWritingToCompleteResponse() : self
     {

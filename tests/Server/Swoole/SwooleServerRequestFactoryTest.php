@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Tests\Http\Server\Swoole;
+namespace FatCode\Tests\HttpServer\Server\Swoole;
 
-use FatCode\Http\Server\Swoole\SwooleServerRequestFactory;
+use FatCode\HttpServer\Server\Swoole\SwooleServerRequestFactory;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 use stdClass;

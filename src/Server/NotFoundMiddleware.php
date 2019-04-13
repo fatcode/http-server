@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Http\Server;
+namespace FatCode\HttpServer\Server;
 
-use FatCode\Http\HttpStatusCode;
-use FatCode\Http\Response;
+use FatCode\HttpServer\HttpStatusCode;
+use FatCode\HttpServer\Response;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;

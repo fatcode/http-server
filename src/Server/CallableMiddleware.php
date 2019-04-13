@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Http\Server;
+namespace FatCode\HttpServer\Server;
 
-use FatCode\Http\Exception\ServerException;
+use FatCode\HttpServer\Exception\ServerHttpServerException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
@@ -21,7 +21,7 @@ final class CallableMiddleware implements MiddlewareInterface
     {
         $response = ($this->middleware)($request, $handler);
         if (!$response instanceof ResponseInterface) {
-            throw ServerException::forInvalidResponseFromCallableMiddleware($this->middleware);
+            throw ServerHttpServerException::forInvalidResponseFromCallableMiddleware($this->middleware);
         }
 
         return $response;

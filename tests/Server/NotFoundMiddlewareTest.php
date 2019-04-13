@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Tests\Http\Server;
+namespace FatCode\Tests\HttpServer\Server;
 
-use FatCode\Http\Exception\ServerException;
-use FatCode\Http\Server\CallableMiddleware;
-use FatCode\Http\Server\NotFoundMiddleware;
+use FatCode\HttpServer\Exception\ServerHttpServerException;
+use FatCode\HttpServer\Server\CallableMiddleware;
+use FatCode\HttpServer\Server\NotFoundMiddleware;
 use PHPUnit\Framework\TestCase;
 use Mockery;
 use Psr\Http\Message\ResponseInterface;

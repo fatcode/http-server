@@ -1,13 +1,13 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Http\Server;
+namespace FatCode\HttpServer\Server;
 
 use FastRoute\DataGenerator\GroupCountBased as GroupCountBasedDataGenerator;
 use FastRoute\Dispatcher;
 use FastRoute\Dispatcher\GroupCountBased as GroupCountBasedDispatcher;
 use FastRoute\RouteParser\Std as StandardRouteParser;
 use FastRoute\RouteCollector;
-use FatCode\Http\Exception\ServerException;
+use FatCode\HttpServer\Exception\ServerHttpServerException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
@@ -42,7 +42,7 @@ class Router implements MiddlewareInterface
         }
 
         if (!$response instanceof ResponseInterface) {
-            throw new ServerException(sprintf(
+            throw new ServerHttpServerException(sprintf(
                 'Route handler must return instance of `%s`, `%s` returned instead.',
                 ResponseInterface::class,
                 is_object($response) ? get_class($response) : gettype($response)

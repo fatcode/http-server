@@ -1,18 +1,13 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Http\Exception;
+namespace FatCode\HttpServer\Exception;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use RuntimeException;
 
-class ServerException extends RuntimeException implements Exception
+class ServerHttpServerException extends RuntimeException implements HttpServerException
 {
-    public static function forInvalidPidFile(string $pid) : self
-    {
-        return new self("PID file `{$pid}` must be writable.");
-    }
-
     public static function forInvalidResponseFromCallableMiddleware($response) : self
     {
         return new self(sprintf(

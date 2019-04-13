@@ -1,11 +1,15 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Http;
+namespace FatCode\HttpServer;
 
-use FatCode\Http\Exception\HttpException;
+use FatCode\HttpServer\Exception\HttpException;
 use InvalidArgumentException;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\UploadedFileInterface;
+
+use function json_decode;
+use function simplexml_load_string;
+use function str_getcsv;
 
 class ServerRequest extends Request implements ServerRequestInterface
 {

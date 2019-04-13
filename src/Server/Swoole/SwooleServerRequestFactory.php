@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Http\Server\Swoole;
+namespace FatCode\HttpServer\Server\Swoole;
 
 use FatCode\Exception\EnumException;
-use FatCode\Http\HttpMethod;
-use FatCode\Http\ServerRequest;
-use FatCode\Http\ServerRequestFactory;
+use FatCode\HttpServer\HttpMethod;
+use FatCode\HttpServer\ServerRequest;
+use FatCode\HttpServer\ServerRequestFactory;
 use Psr\Http\Message\ServerRequestInterface;
 use Swoole\Http\Request;
 use Throwable;

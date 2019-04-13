@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Tests\Http\Server;
+namespace FatCode\Tests\HttpServer\Server;
 
-use FatCode\Http\Exception\ServerException;
-use FatCode\Http\Server\CallableMiddleware;
+use FatCode\HttpServer\Exception\ServerHttpServerException;
+use FatCode\HttpServer\Server\CallableMiddleware;
 use PHPUnit\Framework\TestCase;
 use Mockery;
 use Psr\Http\Message\ResponseInterface;
@@ -31,7 +31,7 @@ final class CallableMiddlewareTest extends TestCase
 
     public function testProcessInvalidMiddleware() : void
     {
-        $this->expectException(ServerException::class);
+        $this->expectException(ServerHttpServerException::class);
         $middleware = new CallableMiddleware(function () {});
         $middleware->process(
             Mockery::mock(ServerRequestInterface::class),

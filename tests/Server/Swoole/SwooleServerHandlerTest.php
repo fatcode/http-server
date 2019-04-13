@@ -1,14 +1,14 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Tests\Http\Server\Swoole;
+namespace FatCode\Tests\HttpServer\Server\Swoole;
 
-use FatCode\Http\Response;
-use FatCode\Http\Server\CallableMiddleware;
-use FatCode\Http\Server\HttpServerSettings;
-use FatCode\Http\Server\MiddlewarePipeline;
-use FatCode\Http\Server\Swoole\SwooleServerHandler;
-use FatCode\Http\ServerRequest;
-use FatCode\Http\ServerRequestFactory;
+use FatCode\HttpServer\Response;
+use FatCode\HttpServer\Server\CallableMiddleware;
+use FatCode\HttpServer\Server\HttpServerSettings;
+use FatCode\HttpServer\Server\MiddlewarePipeline;
+use FatCode\HttpServer\Server\Swoole\SwooleServerHandler;
+use FatCode\HttpServer\ServerRequest;
+use FatCode\HttpServer\ServerRequestFactory;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;

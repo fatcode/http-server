@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Tests\Http\Server;
+namespace FatCode\Tests\HttpServer\Server;
 
-use FatCode\Http\Exception\ServerException;
-use FatCode\Http\HttpMethod;
-use FatCode\Http\Server\Router;
-use FatCode\Http\ServerRequest;
+use FatCode\HttpServer\Exception\ServerHttpServerException;
+use FatCode\HttpServer\HttpMethod;
+use FatCode\HttpServer\Server\Router;
+use FatCode\HttpServer\ServerRequest;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
@@ -71,7 +71,7 @@ final class RouterTest extends TestCase
 
     public function testFailOnInvalidResponse() : void
     {
-        $this->expectException(ServerException::class);
+        $this->expectException(ServerHttpServerException::class);
         $router = new Router();
         $router->patch('/test', function () {});
         $router->process(

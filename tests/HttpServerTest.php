@@ -1,14 +1,14 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Tests\Http;
+namespace FatCode\Tests\HttpServer;
 
-use FatCode\Http\Exception\ServerException;
-use FatCode\Http\HttpServer;
-use FatCode\Http\Server\ErrorMiddleware;
-use FatCode\Http\Server\HttpServerHandler;
-use FatCode\Http\Server\HttpServerSettings;
-use FatCode\Http\Server\MiddlewarePipeline;
-use FatCode\Http\Server\NotFoundMiddleware;
+use FatCode\HttpServer\Exception\ServerHttpServerException;
+use FatCode\HttpServer\HttpServer;
+use FatCode\HttpServer\Server\ErrorMiddleware;
+use FatCode\HttpServer\Server\HttpServerHandler;
+use FatCode\HttpServer\Server\HttpServerSettings;
+use FatCode\HttpServer\Server\MiddlewarePipeline;
+use FatCode\HttpServer\Server\NotFoundMiddleware;
 use PHPUnit\Framework\TestCase;
 
 final class HttpServerTest extends TestCase
@@ -43,7 +43,7 @@ final class HttpServerTest extends TestCase
 
     public function testUseFail() : void
     {
-        $this->expectException(ServerException::class);
+        $this->expectException(ServerHttpServerException::class);
         $server = new HttpServer();
         $server->use(false);
     }

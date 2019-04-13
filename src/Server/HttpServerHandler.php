@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Http\Server;
+namespace FatCode\HttpServer\Server;
 
 interface HttpServerHandler
 {

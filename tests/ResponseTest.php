@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Tests\Http;
+namespace FatCode\Tests\HttpServer;
 
-use FatCode\Http\Exception\ResponseException;
-use FatCode\Http\HttpStatusCode;
-use FatCode\Http\Response;
+use FatCode\HttpServer\Exception\ResponseHttpServerException;
+use FatCode\HttpServer\HttpStatusCode;
+use FatCode\HttpServer\Response;
 use PHPUnit\Framework\TestCase;
 
 final class ResponseTest extends TestCase
@@ -25,7 +25,7 @@ final class ResponseTest extends TestCase
 
     public function testEnd() : void
     {
-        $this->expectException(ResponseException::class);
+        $this->expectException(ResponseHttpServerException::class);
         $response = new Response('Test body', HttpStatusCode::CREATED());
         $response->end();
         self::assertTrue($response->isComplete());

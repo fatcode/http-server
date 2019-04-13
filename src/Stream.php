@@ -1,16 +1,16 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Http;
+namespace FatCode\HttpServer;
 
 use InvalidArgumentException;
 use Psr\Http\Message\StreamInterface;
-use Zend\Diactoros\Stream as BaseStream;
+use Zend\Diactoros\Stream as DiactorosStream;
 
 use function is_resource;
 use function is_string;
 use function strpos;
 
-class Stream extends BaseStream
+class Stream extends DiactorosStream
 {
     public static function fromString(string $content): self
     {

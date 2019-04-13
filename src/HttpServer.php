@@ -1,15 +1,15 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Http;
+namespace FatCode\HttpServer;
 
-use FatCode\Http\Exception\ServerException;
-use FatCode\Http\Server\CallableMiddleware;
-use FatCode\Http\Server\ErrorMiddleware;
-use FatCode\Http\Server\HttpServerHandler;
-use FatCode\Http\Server\HttpServerSettings;
-use FatCode\Http\Server\MiddlewarePipeline;
-use FatCode\Http\Server\NotFoundMiddleware;
-use FatCode\Http\Server\Swoole\SwooleServerHandler;
+use FatCode\HttpServer\Exception\ServerHttpServerException;
+use FatCode\HttpServer\Server\CallableMiddleware;
+use FatCode\HttpServer\Server\ErrorMiddleware;
+use FatCode\HttpServer\Server\HttpServerHandler;
+use FatCode\HttpServer\Server\HttpServerSettings;
+use FatCode\HttpServer\Server\MiddlewarePipeline;
+use FatCode\HttpServer\Server\NotFoundMiddleware;
+use FatCode\HttpServer\Server\Swoole\SwooleServerHandler;
 use Psr\Http\Server\MiddlewareInterface;
 use SplQueue;
 
@@ -41,7 +41,7 @@ class HttpServer
     {
         if (!$middleware instanceof MiddlewareInterface) {
             if (!is_callable($middleware)) {
-                throw ServerException::forInvalidMiddleware($middleware);
+                throw ServerHttpServerException::forInvalidMiddleware($middleware);
             }
             $middleware = new CallableMiddleware($middleware);
         }

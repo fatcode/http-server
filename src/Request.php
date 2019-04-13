@@ -1,12 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Http;
+namespace FatCode\HttpServer;
 
 use InvalidArgumentException;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\UriInterface;
 use Zend\Diactoros\RequestTrait;
-use Zend\Diactoros\Uri;
 
 class Request implements RequestInterface
 {

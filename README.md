@@ -15,9 +15,9 @@
 ```php
 <?php declare(strict_types=1);
 
-use FatCode\Http\HttpServer;
-use FatCode\Http\Server\Router;
-use FatCode\Http\Response;
+use FatCode\HttpServer\HttpServer;
+use FatCode\HttpServer\Server\Router;
+use FatCode\HttpServer\Response;
 
 // Instantiates router for registering resources:
 $router = new Router();
@@ -47,8 +47,8 @@ More options can be found in the [class docblock itself](src/Server/HttpServerSe
 ```php
 <?php declare(strict_types=1);
 
-use FatCode\Http\HttpServer;
-use FatCode\Http\Server\HttpServerSettings;
+use FatCode\HttpServer\HttpServer;
+use FatCode\HttpServer\Server\HttpServerSettings;
 
 // Setting pid file will make server run as a daemon.
 $settings = new HttpServerSettings('0.0.0.0', 8080);
@@ -63,14 +63,14 @@ $server->start();
 ## Middleware and PSR-15 support
 
 Registering and using PSR-15 compatible middleware is trivial, just pass an instance of given middleware or closure itself
-to `HttpServer::use` method in the right order. In fact `FatCode\Http\Server\Router` class is PSR-15 middleware itself.
+to `HttpServer::use` method in the right order. In fact `FatCode\HttpServer\Server\Router` class is PSR-15 middleware itself.
 
 ```php
 <?php declare(strict_types=1);
 
-use FatCode\Http\HttpServer;
+use FatCode\HttpServer\HttpServer;
+use FatCode\HttpServer\Response;
 use Psr\Http\Message\ServerRequestInterface;
-use FatCode\Http\Response;
 
 // Simple pong server.
 $server = new HttpServer();

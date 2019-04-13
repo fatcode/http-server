@@ -14,6 +14,8 @@
   "require": {
     "php": ">=7.2.0",
     "ext-zlib" : "*",
+    "ext-json" : "*",
+    "ext-simplexml" : "*",
     "fatcode/enum": ">=1.1",
     "nikic/fast-route": ">=1.3",
     "psr/http-message": ">=1.0",
@@ -29,12 +31,12 @@
   },
   "autoload": {
     "psr-4": {
-      "FatCode\\Http\\": "src/"
+      "FatCode\\HttpServer\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "FatCode\\Tests\\Http\\": "tests/"
+      "FatCode\\Tests\\HttpServer\\": "tests/"
     }
   },
   "scripts": {

@@ -1,9 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Tests\Http\Server;
+namespace FatCode\Tests\HttpServer\Server;
 
-use FatCode\Http\Server\DispatchMode;
-use FatCode\Http\Server\HttpServerSettings;
+use FatCode\HttpServer\Exception\SettingsException;
+use FatCode\HttpServer\Server\DispatchMode;
+use FatCode\HttpServer\Server\HttpServerSettings;
 use PHPUnit\Framework\TestCase;
 
 final class HttpServerSettingsTest extends TestCase
@@ -41,5 +42,12 @@ final class HttpServerSettingsTest extends TestCase
             ],
             $settings->toArray()
         );
+    }
+
+    public function testInvalidPidFile() : void
+    {
+        $this->expectException(SettingsException::class);
+        $settings = new HttpServerSettings();
+        $settings->setPidFile('/notwritable');
     }
 }

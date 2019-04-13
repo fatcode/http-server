@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Tests\Http\Server;
+namespace FatCode\Tests\HttpServer\Server;
 
-use FatCode\Http\Server\CallableMiddleware;
-use FatCode\Http\Server\MiddlewarePipeline;
+use FatCode\HttpServer\Server\CallableMiddleware;
+use FatCode\HttpServer\Server\MiddlewarePipeline;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;

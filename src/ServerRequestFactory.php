@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Http;
+namespace FatCode\HttpServer;
 
 use Psr\Http\Message\ServerRequestInterface;
 

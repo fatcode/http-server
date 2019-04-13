@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 require_once '../vendor/autoload.php';
 
-use FatCode\Http\HttpServer;
-use FatCode\Http\Server\HttpServerSettings;
+use FatCode\HttpServer\HttpServer;
+use FatCode\HttpServer\Server\HttpServerSettings;
 use Psr\Http\Message\ServerRequestInterface;
-use FatCode\Http\Response;
+use FatCode\HttpServer\Response;
 
 // Simple pong server.
 $server = new HttpServer(new HttpServerSettings('0.0.0.0', 8080));

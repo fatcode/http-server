@@ -1,22 +1,33 @@
 <?php declare(strict_types=1);
 
-namespace FatCode\Http\Server\Swoole;
+namespace FatCode\HttpServer\Server\Swoole;
 
-use FatCode\Http\Server\HttpServerHandler;
-use FatCode\Http\Server\HttpServerSettings;
-use FatCode\Http\Server\MiddlewarePipeline;
-use FatCode\Http\ServerRequestFactory;
-use Swoole\Http\Server;
+use FatCode\HttpServer\Server\HttpServerHandler;
+use FatCode\HttpServer\Server\HttpServerSettings;
+use FatCode\HttpServer\Server\MiddlewarePipeline;
+use FatCode\HttpServer\ServerRequestFactory;
 use RuntimeException;
-use Swoole\Runtime as SwooleRuntime;
 use Swoole\Http\Request as SwooleHttpRequest;
 use Swoole\Http\Response as SwooleHttpResponse;
+use Swoole\Http\Server;
+use Swoole\Runtime as SwooleRuntime;
 
+use function array_reduce;
 use function extension_loaded;
 use function method_exists;
 
 class SwooleServerHandler implements HttpServerHandler
 {
+    private const SETTINGS_MAP = [
+        'buffer_output_size' => 'buffer_output_size',
+        'workers' => 'worker_num',
+        'max_requests' => 'max_requests',
+        'max_connections' => 'max_conn',
+        'upload_dir' => 'upload_tmp_dir',
+        'dispatch_mode' => 'dispatch_mode',
+        'pid_file' => 'pid_file',
+        'debug' => 'debug_mode',
+    ];
     /** @var MiddlewarePipeline */
     private $pipeline;
     /** @var HttpServerSettings */
@@ -110,6 +121,19 @@ class SwooleServerHandler implements HttpServerHandler
 
     private function translateSettings(HttpServerSettings $settings) : array
     {
-        return $settings->toArray();
+        $hash = $settings->toArray();
+
+        $swooleSettings = [];
+        foreach ($hash as $key => $value) {
+            if (!isset(self::SETTINGS_MAP[$key])) {
+                continue;
+            }
+            $swooleSettings[self::SETTINGS_MAP[$key]] = $hash[$key];
+            if ($key === 'pid_file') {
+                $swooleSettings['daemonize'] = 1;
+            }
+        }
+
+        return $swooleSettings;
     }
 }
