@@ -27,14 +27,14 @@ final class HttpServerSettingsTest extends TestCase
         $settings->setWorkers(4);
         $settings->setUploadDir(__DIR__);
 
-        self::assertSame(
+        self::assertEquals(
             [
                 'address' => '0.0.0.0',
                 'port' => 20,
                 'workers' => 4,
                 'max_requests' => 3,
                 'max_connections' => 2,
-                'output_dir' => __DIR__,
+                'upload_dir' => __DIR__,
                 'buffer_output_size' => 1,
                 'response_compression_level' => 4,
                 'dispatch_mode' => 2,
