@@ -6,6 +6,7 @@ use FatCode\HttpServer\ServerRequest;
 use FatCode\HttpServer\UploadStatus;
 use PHPUnit\Framework\TestCase;
 use FatCode\HttpServer\UploadedFile;
+use stdClass;
 
 final class ServerRequestTest extends TestCase
 {
@@ -25,5 +26,19 @@ final class ServerRequestTest extends TestCase
         ]);
 
         self::assertNotEmpty($updatedRequest->getUploadedFiles());
+    }
+
+    public function testWithParsedBody() : void
+    {
+        $expectedBody = new stdClass();
+        $request = new ServerRequest();
+        $updatedRequest = $request->withParsedBody($expectedBody);
+        self::assertNotSame($request, $updatedRequest);
+        self::assertSame($expectedBody, $updatedRequest->getParsedBody());
+    }
+
+    public function testWithAttributes() : void
+    {
+        
     }
 }
