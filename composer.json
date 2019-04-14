@@ -1,8 +1,12 @@
 {
   "name": "fatcode/http-server",
-  "description": "",
+  "description": "Fast, reliable, psr-15, psr-7 compatible php http server.",
   "keywords": [
-    "php"
+    "php",
+    "http server",
+    "swoole",
+    "psr-15",
+    "psr-7"
   ],
   "license": "MIT",
   "authors": [
