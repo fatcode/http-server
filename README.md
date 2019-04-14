@@ -86,3 +86,50 @@ $server->start();
 ## Request, Response and PSR-7
 
 Http package provides convenient PSR-7 implementation based on `zendframework/zend-diactoros` package.
+Shortly saying `FatCode\HttpServer\ServerRequest` and `FatCode\HttpServer\Response` objects utilize `zend-diactoros`
+exceptions and interface with some additions. When working with these objects please keep it in mind.
+
+### Creating new response object
+
+```php
+<?php declare(strict_types=1);
+
+use FatCode\HttpServer\Response;
+use FatCode\HttpServer\HttpStatusCode;
+
+// Creates new response with status code 200.
+$response = new Response("Hello world!", HttpStatusCode::OK());
+```
+
+For your convenience package declares `HttpStatusCode` enum that helps with generation valid http responses.
+More status codes can be found in the [class itself.](src/HttpStatusCode.php).
+
+### Working with request object
+
+#### Reading route parameters
+When declaring parametrized route you can access retrieve the value by calling `FatCode\HttpServer\ServerRequest::getAttribute` method.
+Consider the following example:
+```php
+<?php declare(strict_types=1);
+
+use FatCode\HttpServer\HttpServer;
+use Psr\Http\Message\ServerRequestInterface;
+use FatCode\HttpServer\Response;
+use FatCode\HttpServer\Server\Router;
+
+// Initialize router
+$router = new Router();
+
+// Register parametrized route
+$router->get('/hello/{name}', function (ServerRequestInterface $request) : Response {
+    // Return response
+    return new Response("Hello, your name is {$request->getAttribute('name')}");
+});
+
+// Setup http server
+$server = new HttpServer();
+$server->use($router);
+$server->start();
+```
+
+For more examples you can visit [examples directory](examples).

@@ -16,7 +16,6 @@ $server->use(function (ServerRequestInterface $request) : Response {
     if ($request->getUri()->getPath() === '/upload') {
         $files = $request->getUploadedFiles();
         var_dump($files);
-        //var_dump($request);
         return new Response('Pong!');
     }
     return new Response('Please call POST /upload uri.', HttpStatusCode::NOT_FOUND());
