@@ -233,11 +233,6 @@ class ServerRequest extends Request implements ServerRequestInterface
     private function validateUploadedFiles(array $uploadedFiles) : void
     {
         foreach ($uploadedFiles as $file) {
-            if (is_array($file)) {
-                $this->validateUploadedFiles($file);
-                continue;
-            }
-
             if (!$file instanceof UploadedFileInterface) {
                 throw new InvalidArgumentException('Invalid leaf in uploaded files structure');
             }

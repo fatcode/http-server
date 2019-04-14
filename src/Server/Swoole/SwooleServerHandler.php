@@ -11,8 +11,6 @@ use Swoole\Http\Request as SwooleHttpRequest;
 use Swoole\Http\Response as SwooleHttpResponse;
 use Swoole\Http\Server;
 use Swoole\Runtime as SwooleRuntime;
-
-use function array_reduce;
 use function extension_loaded;
 use function method_exists;
 

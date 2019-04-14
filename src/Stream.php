@@ -12,7 +12,7 @@ use function strpos;
 
 class Stream extends DiactorosStream
 {
-    public static function fromString(string $content): self
+    public static function fromString(string $content) : self
     {
         $stream = new self('php://temp', 'wb+');
         $stream->write($content);
@@ -21,7 +21,7 @@ class Stream extends DiactorosStream
         return $stream;
     }
 
-    public static function fromFile(string $path, string $mode = 'r'): self
+    public static function fromFile(string $path, string $mode = 'r') : self
     {
         if ($path === 'php://input') {
             return new self($path, 'r');
@@ -30,7 +30,7 @@ class Stream extends DiactorosStream
         return new self($path, $mode);
     }
 
-    public static function create($stream, string $mode = 'r'): self
+    public static function create($stream, string $mode = 'r') : self
     {
         if (!is_string($stream) && !is_resource($stream) && !$stream instanceof StreamInterface) {
             throw new InvalidArgumentException(

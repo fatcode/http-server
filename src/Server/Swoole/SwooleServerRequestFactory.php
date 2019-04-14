@@ -6,13 +6,15 @@ use FatCode\Exception\EnumException;
 use FatCode\HttpServer\HttpMethod;
 use FatCode\HttpServer\ServerRequest;
 use FatCode\HttpServer\ServerRequestFactory;
+use FatCode\HttpServer\UploadedFile;
+use FatCode\HttpServer\UploadStatus;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Message\UploadedFileInterface;
 use Swoole\Http\Request;
 use Throwable;
 
 use function Zend\Diactoros\marshalMethodFromSapi;
 use function Zend\Diactoros\marshalUriFromSapi;
-use function Zend\Diactoros\normalizeUploadedFiles;
 use function strtoupper;
 
 use const CASE_UPPER;
@@ -47,7 +49,7 @@ class SwooleServerRequestFactory implements ServerRequestFactory
             $httpMethod,
             $body,
             $headers,
-            normalizeUploadedFiles($input->files ?? []),
+            $this->normalizeUploadedFiles($input->files ?? []),
             $serverParams
         );
 
@@ -60,5 +62,29 @@ class SwooleServerRequestFactory implements ServerRequestFactory
         }
 
         return $request;
+    }
+
+    /**
+     * @param array $files
+     * @return UploadedFile[]
+     */
+    private function normalizeUploadedFiles(array $files) : array
+    {
+        $normalizedFiles = [];
+        foreach ($files as $index => $file) {
+            if ($file instanceof UploadedFileInterface) {
+                $normalizedFiles[] = $file;
+                continue;
+            }
+            $normalizedFiles[] = new UploadedFile(
+                $file['tmp_name'],
+                $file['size'],
+                UploadStatus::fromValue($file['error']),
+                $file['name'] ?? null,
+                $file['type'] ?? null
+            );
+        }
+
+        return $normalizedFiles;
     }
 }
