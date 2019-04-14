@@ -39,6 +39,20 @@ final class ServerRequestTest extends TestCase
 
     public function testWithAttributes() : void
     {
-        
+        $attributes = ['a' => 1, 'b' => '2'];
+        $request = new ServerRequest();
+        $updatedRequest = $request->withAttributes($attributes);
+        self::assertNotSame($request, $updatedRequest);
+        self::assertEquals($attributes, $updatedRequest->getAttributes());
+    }
+
+    public function testWithoutAttribute() : void
+    {
+        $attributes = ['a' => 1, 'b' => '2'];
+        $request = (new ServerRequest())->withAttributes($attributes);
+        self::assertEquals($attributes, $request->getAttributes());
+
+        $updatedRequest = $request->withoutAttribute('b');
+        self::assertEquals(['a' => 1], $updatedRequest->getAttributes());
     }
 }
